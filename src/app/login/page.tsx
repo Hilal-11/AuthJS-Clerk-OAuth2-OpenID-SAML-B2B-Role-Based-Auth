@@ -3,25 +3,26 @@ import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { IconBrandGoogleFilled  , IconBrandGithubFilled   } from "@tabler/icons-react"
+import { login } from "@/actions/user"
 const  Login = async () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 px-2 w-full">
       <div className="w-full md:w-[460px] h-auto p-6 shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] rounded-lg">
-        <form>
+        <form action={login}>
             <h1 className="text-4xl font-bold text-center">Login</h1>
             <p className="text-sm text-center text-muted-foreground pb-8 py-2">Login to your account</p>
 
             <div className="mt-4">
                 <Label className="text-sm font-medium pb-1" htmlFor="username">Username</Label>
-                <Input id="username" type="text" required placeholder="johndoe"/>
+                <Input id="username" name="username" type="text" required placeholder="johndoe"/>
             </div>
             <div className="mt-4">
                 <Label className="text-sm font-medium pb-1" htmlFor="email">Email</Label>
-                <Input id="email" type="email" required placeholder="johndoe@example.com"/>
+                <Input id="email" name="email" type="email" required placeholder="johndoe@example.com"/>
             </div>
             <div className="mt-4">
                 <Label className="text-sm font-medium pb-1" htmlFor="password">Password</Label>
-                <Input id="password" type="password" required placeholder="••••••••"/>
+                <Input id="password" name="password" type="password" required placeholder="••••••••"/>
             </div>
 
             <div className="mt-6">
